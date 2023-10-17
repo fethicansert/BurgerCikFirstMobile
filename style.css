@@ -21,8 +21,6 @@ body{
 }
 
 .header-top{
-    --text : #FFF;
-    --background : transparent;
     width: 100%;
     position: fixed;
     top: 0;
@@ -32,16 +30,15 @@ body{
     align-items: center;
     justify-content: center;
     color: white;
-    padding: 0.7rem 3rem;
+    padding: 0.8rem 3rem;
     z-index: 999;
 }
 
-.header-top.scrolled{
-    --background:#000;
+.intro-title{
+    text-transform: uppercase;
 }
-
 .logo{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .menu-nav{
@@ -63,7 +60,6 @@ body{
     align-items: center;
 }
 
-
 /* ------- menu-nav TRANSTITON in SCRIPT with Button------- */
                                                     /*--*/
 .menu-nav.trans{                                    /*--*/
@@ -81,9 +77,17 @@ body{
 /* ---------------------------------------------------- */
 
 .menu-nav li{
-    margin-left: 1rem;
-    margin-bottom: 1rem;
+    margin-left: 0rem;
+    margin-bottom: 2rem;
     position: relative;
+}
+
+.menu-nav li:nth-child(1){
+    margin-top: 1rem;
+}
+
+.menu-nav li a{
+    font-size: 1.2rem;
 }
 
 .menu-nav li:hover a{
@@ -181,31 +185,35 @@ body{
 
 /* -----------------INTRO HERO-------------- */
 
-.container{
-    /* border: 2px solid red; */
-    padding: 1rem 1rem;
-}
+
 
 .intro{
     width:100%;
-    height:100vh;
+    height:calc(100vh - 72px);
     background-image: url(images/big-mac-burger-french-fries-dark-wood-board.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position-x:  95%;
-    
     text-align:  center;
     color: white;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    margin-top: 71px;
+}
+
+.intro-container{
+    /* border: 2px solid red; */
+    padding: 1rem 1rem;
+    margin-bottom: 10vh;
 }
 
 .intro-title{
     font-size: 3rem;
-    max-width: 450px;
-    margin: 1rem 0;
+    max-width: 520px;
+    margin: .5rem 0;
 }
 
 .intro-order-button{
@@ -215,7 +223,7 @@ body{
     color:white;
     border: none;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 
 .intro-order-button:hover{
@@ -246,74 +254,78 @@ body{
 
 /* ------Burger Ingredients Section---- */
 
-.burger-natural-ingredients-container{
+.burger-ingredients-container{
     max-width: 600px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     overflow: hidden;
-   
 }
 
-.burger-natural-ingredients-image-container{
+.burger-ingredients-image-container{
     position: relative;
     width: 100%;
     margin: 0 auto;
     /* border: 1px solid yellow; */
- 
+    transform: translateX(-80%);
+    opacity: 0;
+    transition: transform 1.7s ease , opacity 1.7s ease .3s;
 }
 
-.burger-natural-ingredients-image{
+.burger-ingredients-image-container.mouveIn{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+
+.burger-ingredients-image{
     display: block;
     margin: 0 auto;
     width: 65%;
     object-fit: cover;
 }
 
-.burger-natural-ingredients-text-container{
+.burger-ingredients-text-container{
     padding: 0 1rem;
     /* border: 2px solid greenyellow; */
     margin: 0 auto;
     width: 100%;
+    transform: translateX(80%);
+    opacity: 0;
+    transition: transform 1.7s ease , opacity 1.7s ease .3s;
+}
+
+.burger-ingredients-text-container.mouveIn{
+    transform: translateX(0%);
+    opacity: 1;
 }
 
 
-.burger-natural-brush-banner{
-    display: inline-block;
-    width: 35%;
-    position: relative;
-    margin-bottom: 0.3rem;
+.burger-ingredients-text-container p:nth-child(1){
+    font-size: 1.5rem;
+    color: #EEB860;
 }
 
-.burger-natural-brush-banner-image{
-    width: 100%;
-}
-
-.burger-ingredients-brush-banner-text{
-    font-size: 0.8rem;
-    color:white;
-}
-
-.burger-natural-ingredients-text-container > h1{
+.burger-ingredients-text-container > h1{
     font-size: clamp(1.6rem,3vw,2.5rem);
     margin-bottom: 0.8rem;
     text-transform: uppercase;
     color: #000;
 }
 
-.burger-natural-ingredients-text-container > p {
+.burger-ingredients-text-container > p {
     font-size:0.9rem;
     margin-bottom: 0.8rem;
     color: rgba(0,0,0,.75);     
 }
 
-.burger-natural-ingredients-list{
+.burger-ingredients-list{
     font-size: .83rem;
     list-style: none;
     color: rgba(0,0,0,.65);
 }
 
-.burger-natural-ingredients-list-item{
+.burger-ingredients-list-item{
     margin-bottom: 0.8rem;
 }
 
@@ -335,7 +347,12 @@ Giving more font size to intro title
     }
 }
 
-/* -------Tablet Size ------- */
+
+/* -------   Tablet Size  --------*/
+/* ------- ------- ------- ------- */
+/* ------- ------- ------- ------- */
+/* ------- ------- ------- ------- */
+/* ------- ------- ------- ------- */
 @media (min-width: 768px){
     .intro{
         text-align: start;
@@ -345,6 +362,12 @@ Giving more font size to intro title
     
     .intro-brush-banner{
         margin: 0;
+    }
+
+    .burger-brush-banner{
+        margin: 0;
+        width: 40%;
+        margin-bottom: 1rem;
     }
   
     .intro-title{
@@ -357,28 +380,37 @@ Giving more font size to intro title
     
     .menu-nav-list{
         align-items: start;
+        height: 100%;
     }
 
-    .burger-natural-ingredients-container{
+    .menu-nav li{
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .menu-nav li a{
+        font-size: 1rem;
+    }
+
+    .burger-ingredients-container{
         flex-direction: row;
-        max-width: 1000px;
+        max-width: 950px;
         padding: 2rem 0;  
     }
 
-    .burger-natural-ingredients-image-container{
+    .burger-ingredients-image-container{
         width: 50%;
         transform: translateX(-50%);
         opacity: 0;
         transition: transform 1.5s ease , opacity 1.5s ease ;
     }
 
-    .burger-natural-ingredients-image-container.mouveIn{
+    .burger-ingredients-image-container.mouveIn{
         transform: translateX(0%);
         opacity: 1;
     }
 
-
-    .burger-natural-ingredients-text-container{
+    .burger-ingredients-text-container{
         width: 50%;
         align-self: center;
         transform: translateX(50%);
@@ -386,29 +418,28 @@ Giving more font size to intro title
         transition: transform 1.5s ease 500ms, opacity 1.5s ease 500ms;
     }
 
-    .burger-natural-ingredients-text-container.mouveIn{
+    .burger-ingredients-text-container.mouveIn{
         transform: translateX(0%);
         opacity: 1;
     }
 
-    .burger-natural-ingredients-text-container > h1{
+    .burger-ingredients-text-container > h1{
         margin-bottom: 1.2rem;   
     }
 
-    .burger-natural-ingredients-text-container > p{
+    .burger-ingredients-text-container > p{
         font-size: .95rem;
         margin-bottom: 1.5rem;
     }
 
-    .burger-natural-ingredients-list{
+    .burger-ingredients-list{
         font-size: .90rem;
     }
 
-    .burger-natural-ingredients-image{
+    .burger-ingredients-image{
         width: 90%;
         max-width: none;
     }
-
 
 }
 
@@ -428,6 +459,9 @@ Giving more font size to intro title
         justify-items: center;
     }
 
+    .burger-ingredients-container{
+        max-width: 1024px;
+    }
     .logo{
         width:fit-content;
         justify-self: self-start;
@@ -446,6 +480,10 @@ Giving more font size to intro title
     }
 
     .menu-nav li{
+        margin-top: 20px;
+    }
+
+    .menu-nav li:nth-child(1){
         margin-top: 20px;
     }
 
@@ -474,15 +512,13 @@ Giving more font size to intro title
         padding: 0.7em 1.4em;
     }
 
-    .burger-natural-ingredients-image-container{
-        background: red;
-    }
-
-    .burger-natural-ingredients-container{
+    .burger-ingredients-container{
         overflow: hidden;
 
     }
 }
+
+
 
 
 
