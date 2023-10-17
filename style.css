@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
+/* 1024 deki media ya bak max width ayari lazim animasyonlar cok icerden geliyor */
+
 :root{
     --headerBackGroundColor : rgba(0,0,0,1);;
     --headernavColor :rgba(0,0,0,0.9);
     --buttonColor : #E60022;
     --hoverColor : #FF9800;
     --headerHeight:79px;
+    --borderColor : none;
+    /* --borderColorIntro: red; */
 }
 
 *{
@@ -30,7 +34,7 @@ body{
     align-items: center;
     justify-content: center;
     color: white;
-    padding: 0.8rem 3rem;
+    padding: 1.3rem 3rem;
     z-index: 999;
 }
 
@@ -58,6 +62,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* background: red; */
 }
 
 /* ------- menu-nav TRANSTITON in SCRIPT with Button------- */
@@ -184,7 +189,11 @@ body{
 }
 
 /* -----------------INTRO HERO-------------- */
-
+/* -----------------INTRO HERO-------------- */
+/* -----------------INTRO HERO-------------- */
+/* -----------------INTRO HERO-------------- */
+/* -----------------INTRO HERO-------------- */
+/* -----------------INTRO HERO-------------- */
 
 
 .intro{
@@ -196,24 +205,24 @@ body{
     background-position-x:  95%;
     text-align:  center;
     color: white;
-
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-top: 71px;
 }
 
 .intro-container{
-    /* border: 2px solid red; */
     padding: 1rem 1rem;
     margin-bottom: 10vh;
+    border: 1px solid var(--borderColor);
 }
 
 .intro-title{
     font-size: 3rem;
     max-width: 520px;
     margin: .5rem 0;
+    border: 1px solid var(--borderColor);
 }
 
 .intro-order-button{
@@ -221,9 +230,9 @@ body{
     padding: 0.6em 1.1em;
     background: var(--buttonColor);
     color:white;
-    border: none;
     cursor: pointer;
     margin-top: .5rem;
+    border: none;
 }
 
 .intro-order-button:hover{
@@ -253,6 +262,13 @@ body{
 
 
 /* ------Burger Ingredients Section---- */
+/* ------Burger Ingredients Section---- */
+/* ------Burger Ingredients Section---- */
+/* ------Burger Ingredients Section---- */
+/* ------Burger Ingredients Section---- */
+/* ------Burger Ingredients Section---- */
+
+
 
 .burger-ingredients-container{
     max-width: 600px;
@@ -266,7 +282,7 @@ body{
     position: relative;
     width: 100%;
     margin: 0 auto;
-    /* border: 1px solid yellow; */
+    border: 1px solid var(--borderColorIntro);
     transform: translateX(-80%);
     opacity: 0;
     transition: transform 1.7s ease , opacity 1.7s ease .3s;
@@ -277,22 +293,26 @@ body{
     opacity: 1;
 }
 
-
 .burger-ingredients-image{
     display: block;
     margin: 0 auto;
     width: 65%;
     object-fit: cover;
+    border: 1px solid var(--borderColorIntro);
 }
 
 .burger-ingredients-text-container{
     padding: 0 1rem;
-    /* border: 2px solid greenyellow; */
+    border: 1px solid var(--borderColorIntro);
     margin: 0 auto;
     width: 100%;
     transform: translateX(80%);
     opacity: 0;
     transition: transform 1.7s ease , opacity 1.7s ease .3s;
+}
+
+.burger-ingredients-text-container-text{
+    border: 1px solid var(--borderColorIntro);
 }
 
 .burger-ingredients-text-container.mouveIn{
@@ -301,23 +321,27 @@ body{
 }
 
 
-.burger-ingredients-text-container p:nth-child(1){
-    font-size: 1.5rem;
+.burger-ingredients-text-container-text p:nth-child(1){
+    font-size: 1.2rem;
     color: #EEB860;
+    text-align: center;
 }
 
-.burger-ingredients-text-container > h1{
-    font-size: clamp(1.6rem,3vw,2.5rem);
+.burger-ingredients-text-container-text h1{
+    font-size: 1.5rem;
     margin-bottom: 0.8rem;
     text-transform: uppercase;
     color: #000;
+    text-align: center;
 }
 
-.burger-ingredients-text-container > p {
+.burger-ingredients-text-container-text > p {
     font-size:0.9rem;
     margin-bottom: 0.8rem;
     color: rgba(0,0,0,.75);     
 }
+/* 
+//Burda sorun var uste > p */
 
 .burger-ingredients-list{
     font-size: .83rem;
@@ -364,6 +388,10 @@ Giving more font size to intro title
         margin: 0;
     }
 
+    .intro-container{
+        max-width: 500px;
+    }
+
     .burger-brush-banner{
         margin: 0;
         width: 40%;
@@ -392,10 +420,17 @@ Giving more font size to intro title
         font-size: 1rem;
     }
 
+    .burger-ingredients{
+        margin: 5rem 0;
+    }
+
     .burger-ingredients-container{
         flex-direction: row;
         max-width: 950px;
         padding: 2rem 0;  
+        border: 1px solid var(--borderColor);
+        align-items: center;
+        justify-content: center;
     }
 
     .burger-ingredients-image-container{
@@ -403,6 +438,7 @@ Giving more font size to intro title
         transform: translateX(-50%);
         opacity: 0;
         transition: transform 1.5s ease , opacity 1.5s ease ;
+        margin: 0;
     }
 
     .burger-ingredients-image-container.mouveIn{
@@ -411,6 +447,7 @@ Giving more font size to intro title
     }
 
     .burger-ingredients-text-container{
+        margin: 0;
         width: 50%;
         align-self: center;
         transform: translateX(50%);
@@ -423,11 +460,13 @@ Giving more font size to intro title
         opacity: 1;
     }
 
-    .burger-ingredients-text-container > h1{
+    .burger-ingredients-text-container-text > h1{
+        font-size: 1.8rem;
         margin-bottom: 1.2rem;   
+        text-align: start;
     }
 
-    .burger-ingredients-text-container > p{
+    .burger-ingredients-text-container-text > p{
         font-size: .95rem;
         margin-bottom: 1.5rem;
     }
@@ -437,8 +476,8 @@ Giving more font size to intro title
     }
 
     .burger-ingredients-image{
-        width: 90%;
-        max-width: none;
+        width: 100%;
+        max-width: 400px;
     }
 
 }
@@ -450,7 +489,7 @@ Giving more font size to intro title
 
     .intro-title{
         font-size: 4.5rem;
-        max-width: 550px;
+        max-width: 650px;
     }
 
     .header-top{
@@ -459,24 +498,30 @@ Giving more font size to intro title
         justify-items: center;
     }
 
-    .burger-ingredients-container{
-        max-width: 1024px;
-    }
+
     .logo{
         width:fit-content;
         justify-self: self-start;
         margin-left: 0.8rem;
+        font-size: 3rem;
+    }
+
+    .menu-nav li a{
+        font-size: 1.1rem;
     }
 
     .burger-menu{
         display: none;        
     }
 
+
     .menu-nav{
         grid-column: 2/3;
         position: static;
         transform: scale(1,1);
-        width: fit-content;
+        width: 80%;
+        display: flex;
+        justify-content: center;
     }
 
     .menu-nav li{
@@ -491,6 +536,9 @@ Giving more font size to intro title
         opacity: 1;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width:750px ;
     }
 
     .social-nav{
@@ -504,7 +552,7 @@ Giving more font size to intro title
 
     .intro-title{
         font-size: 4.2rem;
-        max-width: 540px;
+        max-width: 550px;
         margin: 1rem 0;
     }
     
@@ -512,9 +560,54 @@ Giving more font size to intro title
         padding: 0.7em 1.4em;
     }
 
-    .burger-ingredients-container{
-        overflow: hidden;
 
+    .burger-ingredients-container{
+        max-width: 1500px;
+        overflow: hidden;
+    }
+    
+    .burger-ingredients-image{
+        width: 73%;
+        max-width: 450px;
+    }
+
+    .burger-ingredients-text-container{
+        padding: 0;
+     }
+
+     .burger-ingredients-text-container-text{
+        max-width: 550px;
+        margin: 0 0 0 right;
+     }
+     
+     .burger-ingredients-text-container-text > h1{
+        font-size: 2.1rem;
+    }
+
+    .burger-ingredients-text-container-text > p{
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .burger-ingredients-list-item{
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 1600px){
+  
+    .intro-title{
+        font-size: 5.4rem;
+        max-width: 850px;
+    }
+
+    .intro-container{
+        max-width: 700px;
+    }
+
+    .logo{
+        font-size: 3.5rem;
     }
 }
 
