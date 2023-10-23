@@ -251,14 +251,29 @@ body{
     height: 100%;
 }
 
-.intro-brush-banner-text,
-.burger-ingredients-brush-banner-text{
+.intro-brush-banner-text{
+    color: white;
+    font-weight: bold;
+    word-spacing: 2px;
+    font-style: italic;
+}
+
+/* General Styles */
+/* General Styles */
+/* General Styles */
+
+.center-text{
     position: absolute;
     left: 45%;
     top: 50%;
     transform: translate(-50%,-50%);
     font-weight: bold;
 }
+
+/* General Styles */
+/* General Styles */
+/* General Styles */
+
 
 
 /* ------Burger Ingredients Section---- */
@@ -351,6 +366,124 @@ body{
 
 .burger-ingredients-list-item{
     margin-bottom: 0.8rem;
+}
+
+.burger-text{
+    color: white;
+    font-style: italic;
+}
+
+
+.burger-menus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+/* 1 - Menu banner yazisini ortaya almak icin flex verdim ama
+ pek iyi fikir degil gibi margin le vermek daha mantikli olacak
+   2 - Grid menu itemlerinin boylarina karar veremedim resimler ekledikten sonra kara versem
+        Daha iyi olabilit
+ */
+ 
+
+.burger-menus-grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9,300px);
+    justify-content: center;
+    /* border: 1px solid rebeccapurple; */
+    margin:  0 auto;
+    justify-items: center;
+    gap: 5px;
+    margin-top: 1.5rem;
+    padding: 0 .3rem;
+}
+
+.menu{
+    /* border: 1px solid yellowgreen; */
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-image{
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.menu-image::before{
+    content:'';
+    width: 64px;
+    height: 64px;
+    background-image: url(BurgerImages/burger\ \(1\).png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: loop;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+
+.menu-image.loaded::before{
+    opacity: 0;
+}
+
+.burger-image{
+    width:70%;
+    height: 100%;
+    opacity: 0;
+}
+
+.menu-image.loaded .burger-image{
+    opacity: 1;
+}
+
+
+.menu-info{
+    height: 15%;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Burgerlerin boyutunu ayarlamak icin her birini ayri style vermem gerekti */
+.burger-2{
+    height: 73%;
+}
+
+.burger-3{
+    height: 90%;
+}
+
+.burger-4{
+    height: 90%;
+    width: 65%;
+}
+
+.burger-6{
+    height: 80%;
+    border-radius: 20px;
+}
+
+.burger-9{
+    height: 90%;
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+
+.price-tag{
+    color: rgb(211, 25, 25);
+    margin-left: .7rem;
 }
 
 /* Headen min size hiding social list */
@@ -480,6 +613,14 @@ Giving more font size to intro title
         max-width: 400px;
     }
 
+    .burger-menus-grid{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5,300px);
+        max-width: 850px;
+    }
+  
+
+
 }
 
 @media (min-width: 1024px){
@@ -511,7 +652,7 @@ Giving more font size to intro title
     }
 
     .burger-menu{
-        display: none;        
+        display: none;     
     }
 
 
@@ -593,6 +734,15 @@ Giving more font size to intro title
         font-size: 1rem;
     }
 
+    .burger-menus-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3,300px);
+    }
+
+    .burger-menus-grid{
+        max-width: 1200px;
+    }
+
 }
 
 @media (min-width: 1600px){
@@ -611,6 +761,91 @@ Giving more font size to intro title
     }
 }
 
+@keyframes loop{
+    0%{
+        scale: 1;
+    }
+
+    100%{
+        scale: 1.15;
+    }
+}
+
+.caursel-deals{
+    margin: 1rem 0;
+}
+
+.wrapper{
+    width: 100%;
+    position: relative;
+    margin:  0 auto;
+}
+
+.caursel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% /1);
+    text-align: center;
+    height: 100%;
+    width: fit-content;
+    overflow: hidden;
+    /* background: black; */
+
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    gap: 10px;
+}
+
+.caursel.dragging{
+    cursor: grab;
+    user-select: none;
+    scroll-behavior: auto;
+    /* scroll-snap-type: none; */
+}
+
+.wrapper i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+}
+
+.menu-img{
+    scroll-snap-align: start;
+    height: 500px;
+}
+
+img{
+    border-radius: 5px;
+    
+    width: 100%;
+    height: 100%;
+}
+
+
+.wrapper i:nth-child(1){
+    left: 0%;
+}
+
+.wrapper i:last-child{
+    right: 0%;
+}
+
+
+@media (min-width: 850px) {
+    .caursel{
+        grid-auto-columns: calc(100% / 2);
+    }
+}
+
+
+@media (min-width: 1404px) {
+    .caursel{
+        grid-auto-columns: calc(100% / 3);
+    }
+}
 
 
 

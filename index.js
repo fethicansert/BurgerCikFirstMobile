@@ -8,6 +8,45 @@ const sectionTwo = document.querySelector('.burger-ingredients');
 const sectionTwoImage = document.querySelector('.burger-ingredients-image-container');
 const sectionTwoText = document.querySelector('.burger-ingredients-text-container')
 
+const menuImages = document.querySelectorAll('.burger-image');
+
+
+
+const caursel = document.querySelector('.caursel');
+const arrows = document.querySelectorAll('.wrapper i');
+const firstCardWidth = document.querySelector('.menu-img').offsetWidth;
+
+// const div = document.createElement('DIV');
+// div.setAttribute('class','menu-img');
+// caursel.appendChild(div);
+
+arrows.forEach((arrow) => {
+    arrow.addEventListener('click',() => {
+        caursel.scrollLeft += arrow.id === 'arrow-left' ? -firstCardWidth : firstCardWidth;
+    });
+});
+
+// caursel.addEventListener('mousemove',(e) => {
+//     show(e);
+// });
+// caursel.addEventListener('click',show)
+
+// function show(e){
+    
+//     console.log(e.currentTarget);
+// }
+
+function loadImage(e){
+    e.target.parentElement.classList.add('loaded');
+}
+
+menuImages.forEach((img) => {
+    if(img.complete){
+        loadImage();
+    }else{
+        img.addEventListener('load',loadImage)
+    }
+});
 
 navOpenButton.onclick = () =>{
     navMenu.classList.toggle('open');   
@@ -48,27 +87,6 @@ sectionTwoObserver.observe(sectionTwo)
 
 
 
-
-
-// const optionsSectionOne = {
-//     root : null,
-//     thresold : 0,
-//     rootMargin : '-80px'
-// }
-// const sectionOneObserver = new IntersectionObserver(function(entries,observer) {
-        
-//         entries.forEach((entry)=>{
-//             if(!entry.isIntersecting){
-//                 headerTop.classList.add('scrolled');
-//             }else if(entry.isIntersecting){
-//                 headerTop.classList.remove('scrolled');
-//             }
-//         })
-// },
-
-// optionsSectionOne);
-
-// sectionOneObserver.observe(sectionOne);
 
 
 
