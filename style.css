@@ -368,18 +368,86 @@ body{
     margin-bottom: 0.8rem;
 }
 
+
+/* BURGER DEALS */
+/* BURGER DEALS */
+/* BURGER DEALS */
+.caursel-deals{
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+}
+
+.wrapper{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    margin:  0 auto;
+}
+
+.caursel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% /1);
+    text-align: center;
+    height: 100%;
+    width: fit-content;
+    overflow: hidden;
+    /* background: black; */
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.caursel.dragging{
+    cursor: grab;
+    user-select: none;
+    scroll-behavior: auto;
+    /* scroll-snap-type: none; */
+}
+
+.wrapper i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+}
+
+
+
+
+
+
+
+
+
+
+.wrapper i:nth-child(1){
+    left: 0%;
+}
+
+.wrapper i:last-child{
+    right: 0%;
+}
+
+/* //////////////////////////////// */
+/* //////////////////////////////// */
+/* //////////////////////////////// */
+
 .burger-text{
     color: white;
     font-style: italic;
 }
 
-
 .burger-menus{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8rem;
 }
+
 
 /* 1 - Menu banner yazisini ortaya almak icin flex verdim ama
  pek iyi fikir degil gibi margin le vermek daha mantikli olacak
@@ -387,7 +455,6 @@ body{
         Daha iyi olabilit
  */
  
-
 .burger-menus-grid{
     display: grid;
     width: 100%;
@@ -491,7 +558,20 @@ body{
     .social-nav{
         display: none;
     }
+
+ 
 }
+
+
+/* @media (min-width: 380px){
+    .menu-img{
+        height: 200px;
+    }
+} */
+
+
+
+
 
 /* ---------
 Changing background image to center 
@@ -501,6 +581,10 @@ Giving more font size to intro title
 
     .intro{
         background-position-x: center;
+    }
+
+    .caursel-deals{
+        min-height: 550px;
     }
 }
 
@@ -618,7 +702,6 @@ Giving more font size to intro title
         grid-template-rows: repeat(5,300px);
         max-width: 850px;
     }
-  
 
 
 }
@@ -771,79 +854,30 @@ Giving more font size to intro title
     }
 }
 
-.caursel-deals{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:  center;
-    align-items: center;
-    /* background: red; */
-}
-
-.wrapper{
-    width: 100%;
-    height: fit-content;
-    position: relative;
-    margin:  0 auto;
-}
-
-.caursel{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc(100% /1);
-    text-align: center;
-    height: 100%;
-    width: fit-content;
-    overflow: hidden;
-    /* background: black; */
-
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory; 
-    scroll-behavior: smooth;
-    scrollbar-width: 0;
-    gap: 10px;
-}
-
-.caursel.dragging{
-    cursor: grab;
-    user-select: none;
-    scroll-behavior: auto;
-    /* scroll-snap-type: none; */
-}
-
-.wrapper i{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-}
 
 .menu-img{
     scroll-snap-align: start;
-    height: 500px;
+    height: 50vw;
+    max-height: 370px;
 }
 
 img{
     border-radius: 5px;
-    
-    width: 100%;
+    width: 90%;
     height: 100%;
+    max-width: 640px;
 }
 
-
-.wrapper i:nth-child(1){
-    left: 0%;
-}
-
-.wrapper i:last-child{
-    right: 0%;
-}
-
-
-@media (min-width: 850px) {
+@media (min-width: 1024px) {
     .caursel{
         grid-auto-columns: calc(100% / 2);
     }
+
+    .menu-img{
+        height: 30vw;
+        max-height: 420px;
+    }
+
 }
 
 
@@ -851,9 +885,11 @@ img{
     .caursel{
         grid-auto-columns: calc(100% / 3);
     }
+
+    .menu-img{
+        height: 21vw;
+        max-height: 370px;
+    }
+  
 }
-
-
-
-
 

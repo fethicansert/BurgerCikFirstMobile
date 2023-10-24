@@ -16,9 +16,7 @@ const caursel = document.querySelector('.caursel');
 const arrows = document.querySelectorAll('.wrapper i');
 const firstCardWidth = document.querySelector('.menu-img').offsetWidth;
 
-// const div = document.createElement('DIV');
-// div.setAttribute('class','menu-img');
-// caursel.appendChild(div);
+
 
 arrows.forEach((arrow) => {
     arrow.addEventListener('click',() => {
@@ -26,15 +24,6 @@ arrows.forEach((arrow) => {
     });
 });
 
-// caursel.addEventListener('mousemove',(e) => {
-//     show(e);
-// });
-// caursel.addEventListener('click',show)
-
-// function show(e){
-    
-//     console.log(e.currentTarget);
-// }
 
 function loadImage(e){
     e.target.parentElement.classList.add('loaded');
