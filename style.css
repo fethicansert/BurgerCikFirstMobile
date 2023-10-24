@@ -772,11 +772,17 @@ Giving more font size to intro title
 }
 
 .caursel-deals{
-    margin: 1rem 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+    /* background: red; */
 }
 
 .wrapper{
     width: 100%;
+    height: fit-content;
     position: relative;
     margin:  0 auto;
 }
