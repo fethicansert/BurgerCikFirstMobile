@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nosifer&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600;700&display=swap');
+
 
 /* 1024 deki media ya bak max width ayari lazim animasyonlar cok icerden geliyor */
 
@@ -25,6 +27,7 @@ body{
     background: #FFF;
 }
 
+
 .header-top{
     width: 100%;
     position: fixed;
@@ -34,16 +37,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     padding: 1.3rem 3rem;
     z-index: 999;
+}
+
 }
 
 .intro-title{
     text-transform: uppercase;
 }
 .logo{
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    color: white;
 }
 
 .menu-nav{
@@ -92,8 +98,19 @@ body{
     margin-top: 1rem;
 }
 
-.menu-nav li a{
+.menu-nav li a {
     font-size: 1.2rem;
+    color: white;
+}
+
+/* Selected Nav Item */
+.menu-nav .selected-a{
+    color: #f7b21d;
+}
+/* Selected Nav Item */
+
+.menu-nav .selected-li::before{
+    scale: 1 1;
 }
 
 .menu-nav li:hover a{
@@ -115,9 +132,13 @@ body{
     transition: scale 200ms ease;
 }
 
+
+
 .menu-nav li:hover::before{
     scale: 1 1;
 }
+
+
 
 .menu-nav a{
     text-decoration: none;
@@ -226,7 +247,7 @@ body{
     border: 1px solid var(--borderColor);
 }
 
-.intro-order-button{
+.main-button{
     font-size: 1.1rem;
     padding: 0.6em 1.1em;
     background: var(--buttonColor);
@@ -298,6 +319,37 @@ body{
     margin: 0 auto;
     overflow: hidden;
 }
+.burger-ingredinets-bordered-header-container{
+    background: #f7b21d;
+    height: 20px;
+    position: relative;
+    margin: 1rem auto;
+    width: 300px;
+}
+
+.ingredients-header{
+    position: absolute;
+    font-size: 1.4rem;
+    font-family: 'Luckiest Guy', cursive;
+    text-transform: uppercase;
+    top: -65%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    letter-spacing: 3px;
+}
+
+/* .burger-ingredients-text-container-text p:nth-child(1){
+    font-size: 1rem;
+    color: #EEB860;
+    text-align: center;
+} */
+
+.burger-ingredients-text-container-text > p {
+    font-size:0.9rem;
+    margin-bottom: 0.8rem;
+    color: rgba(0,0,0,.75);     
+}
 
 .burger-ingredients-image-container{
     position: relative;
@@ -323,13 +375,21 @@ body{
 }
 
 .burger-ingredients-text-container{
-    padding: 0 1rem;
+    padding: 0 0rem;
     border: 1px solid var(--borderColorIntro);
     margin: 0 auto;
     width: 100%;
     transform: translateX(80%);
     opacity: 0;
     transition: transform 1.7s ease , opacity 1.7s ease .3s;
+    text-align: center;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.ingredients-button{
+    display: block;
+    margin: 1.3rem auto 0 auto;
+    padding: 0.5em 1em;
 }
 
 .burger-ingredients-text-container-text{
@@ -342,25 +402,7 @@ body{
 }
 
 
-.burger-ingredients-text-container-text p:nth-child(1){
-    font-size: 1.2rem;
-    color: #EEB860;
-    text-align: center;
-}
 
-.burger-ingredients-text-container-text h1{
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-    color: #000;
-    text-align: center;
-}
-
-.burger-ingredients-text-container-text > p {
-    font-size:0.9rem;
-    margin-bottom: 0.8rem;
-    color: rgba(0,0,0,.75);     
-}
 /* 
 //Burda sorun var uste > p */
 
@@ -428,13 +470,13 @@ body{
     transform: translateY(-50%);
     background: #e60023bf;
     z-index: 999;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     cursor: pointer;
 }
@@ -442,6 +484,7 @@ body{
 .wrapper i:hover{
     background: #E60022;
 }
+
 
 .menu-img{
     scroll-snap-align: start;
@@ -489,14 +532,14 @@ img{
     align-items: center;
 }
 
-.burger-menus-header-container{
+.bordered-header-container{
     background:#f7b21d ;
     height: 25px;
     width: 150px;
     position: relative; 
 }
 
-.burger-menus-header-container h1{
+.bordered-header-container h1{
     font-size: 2.2rem;
     text-transform: uppercase;
     position: absolute;
@@ -606,6 +649,12 @@ img{
     margin-left: .7rem;
 }
 
+.burger-menu-button{
+    font-size: 1.4;
+    margin-top: 2rem;
+    padding: .7em 2em;
+}
+
 /* 
 /////////////////////     400 PX  /////////////////////////////////////////
 */
@@ -633,6 +682,17 @@ img{
 
     .caursel-deals{
         height: 65vh;
+    }
+
+    .burger-ingredinets-bordered-header-container{
+        width: 350px;
+        height: 23px;
+    }
+
+
+    .ingredients-header{
+        font-size: 1.6rem;
+        top: -48%;
     }
 }
 /* 
@@ -717,6 +777,7 @@ img{
         transform: translateX(0%);
         opacity: 1;
     }
+    
 
     .burger-ingredients-text-container{
         margin: 0;
@@ -725,17 +786,31 @@ img{
         transform: translateX(50%);
         opacity: 0;
         transition: transform 1.5s ease 500ms, opacity 1.5s ease 500ms;
+        text-align: start;
+        padding: 0 1rem;
+    }
+
+    .burger-ingredinets-bordered-header-container{
+        margin: 1rem 0;
+        width: 365px;
+        height: 22px;
+    }
+
+
+    .ingredients-header{
+        font-size: 1.8rem;
+        top: -70%;
+    }
+    
+
+    .ingredients-button{
+        margin: 1.3rem 0 0 0;
+        padding: 0.5em 1.5em;
     }
 
     .burger-ingredients-text-container.mouveIn{
         transform: translateX(0%);
         opacity: 1;
-    }
-
-    .burger-ingredients-text-container-text > h1{
-        font-size: 1.8rem;
-        margin-bottom: 1.2rem;   
-        text-align: start;
     }
 
     .burger-ingredients-text-container-text > p{
@@ -759,17 +834,31 @@ img{
         gap: 30px;
     }
 
-    .burger-menus-header-container{
+    .bordered-header-container{
         height: 30px;
         width: 175px;
     }
     
-    .burger-menus-header-container h1{
+    .bordered-header-container h1{
         font-size: 3rem;
     }
 
     .caursel-deals{
         height: 75vh;
+    }
+
+    .wrapper i{
+        height: 35px;
+        width: 35px;
+        font-size: 17px;
+    }
+
+    .wrapper i:nth-child(1){
+        left: 3%;
+    }
+    
+    .wrapper i:last-child{
+        right: 3%;
     }
 
 }
@@ -862,28 +951,39 @@ img{
 
 
     .burger-ingredients-container{
-        max-width: 1500px;
+        max-width: none;
         overflow: hidden;
+    }
+
+    .burger-ingredients{
+        min-height: 700px;
     }
     
     .burger-ingredients-image{
-        width: 73%;
-        max-width: 450px;
+        width: 85%;
+        max-width: 650px;
     }
 
     .burger-ingredients-text-container{
         padding: 0;
      }
 
+     .burger-ingredinets-bordered-header-container{
+        margin: 2rem 0;
+        width: 450px;
+        height: 22px;
+    }
+
+    .ingredients-header{
+        font-size: 2.3rem;
+        top: -100%;
+    }
+
      .burger-ingredients-text-container-text{
         max-width: 550px;
         margin: 0 0 0 right;
      }
      
-     .burger-ingredients-text-container-text > h1{
-        font-size: 2.1rem;
-    }
-
     .burger-ingredients-text-container-text > p{
         font-size: 1.2rem;
         margin-bottom: 1.5rem;
@@ -916,13 +1016,27 @@ img{
         max-height: 420px;
     }
 
-    .burger-menus-header-container{
+    .bordered-header-container{
         height: 35px;
         width: 210px;
     }
     
-    .burger-menus-header-container h1{
+    .bordered-header-container h1{
         font-size: 3.5rem;
+    }
+
+    .wrapper i{
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+
+    .wrapper i:nth-child(1){
+        left: 0%;
+    }
+    
+    .wrapper i:last-child{
+        right: 0%;
     }
 
 
@@ -960,10 +1074,10 @@ img{
 /* 
 /////////////////////     1600 PX  /////////////////////////////////////////
 */
-@media (min-width: 1600px){
+@media (min-width: 1400px){
   
     .intro-title{
-        font-size: 5.4rem;
+        font-size: 5.7rem;
         max-width: 850px;
     }
 
