@@ -19,14 +19,19 @@ const firstCardWidth = document.querySelector('.menu-img').offsetWidth;
 
 
 arrows.forEach((arrow) => {
+    
     arrow.addEventListener('click',() => {
+        console.log('clicked');
         caursel.scrollLeft += arrow.id === 'arrow-left' ? -firstCardWidth : firstCardWidth;
     });
 });
 
 
 function loadImage(e){
+    
     e.target.parentElement.classList.add('loaded');
+    
+    
 }
 
 menuImages.forEach((img) => {
