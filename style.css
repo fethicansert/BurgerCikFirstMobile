@@ -41,11 +41,12 @@ body{
     z-index: 999;
 }
 
-}
+
 
 .intro-title{
     text-transform: uppercase;
 }
+
 .logo{
     font-size: 2.3rem;
     text-transform: uppercase;
@@ -332,7 +333,7 @@ body{
     font-size: 1.4rem;
     font-family: 'Luckiest Guy', cursive;
     text-transform: uppercase;
-    top: -65%;
+    top: -55%;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
@@ -544,7 +545,7 @@ img{
     text-transform: uppercase;
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-47%);
+    transform: translate(-50%,-40%);
     font-family: 'Luckiest Guy', cursive;
     letter-spacing: 6px;
 }
@@ -553,7 +554,7 @@ img{
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(9,300px);
+    grid-template-rows: repeat(9,fit-content);
     justify-content: center;
     /* border: 1px solid rebeccapurple; */
     margin:  0 auto;
@@ -573,7 +574,7 @@ img{
 }
 
 .menu-image{
-    height: 85%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -610,11 +611,17 @@ img{
     opacity: 1;
 }
 
-
 .menu-info{
     height: 15%;
     text-align: center;
     font-weight: bold;
+}
+
+.menu-info p:nth-child(2){
+    color: rgba(0,0,0,.65);
+    margin-top: .5rem;
+    font-size: .8rem;
+    font-weight: 500;
 }
 
 /* Burgerlerin boyutunu ayarlamak icin her birini ayri style vermem gerekti */
@@ -629,11 +636,6 @@ img{
 .burger-4{
     height: 90%;
     width: 65%;
-}
-
-.burger-6{
-    height: 80%;
-    border-radius: 50%
 }
 
 .burger-8{
@@ -654,6 +656,55 @@ img{
     margin-top: 2rem;
     padding: .7em 2em;
 }
+
+.video-section{
+    padding: 5rem .5rem;
+    /* background: red; */
+    height: 90vh;
+    
+}
+
+.video-section-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.quote-container{
+    height: 55%;
+    width: 100%;
+}
+
+.video-container{
+    height: 42%;
+    position: relative;
+}
+
+.quote-img,
+.video-img{
+    width: 100%;
+    height: 100%;
+}
+
+.play-button{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.935);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+
+    font-size: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* 
 /////////////////////     400 PX  /////////////////////////////////////////
@@ -859,6 +910,20 @@ img{
     
     .wrapper i:last-child{
         right: 3%;
+    }
+
+    .video-section{
+        padding: 4rem .5rem;
+        background: red;
+        height: 60vh;
+    }
+    
+    .video-section-container{
+        display: flex;
+        flex-direction: row;
+      
+        height: 100%;
+        justify-content: space-between;
     }
 
 }
