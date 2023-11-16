@@ -684,7 +684,6 @@ body{
 }
 
 .video-section-title{
-    
     line-height: 30px;
 }
 
@@ -876,6 +875,11 @@ body{
     background: #f7b21d;
     border: none;
     border-radius: 1px;
+    cursor: pointer;
+}
+
+.join-call-to-action button:hover{
+    opacity: .85;
 }
 
 
@@ -885,7 +889,7 @@ body{
 }
 
 .map-container{
-    background-image: url(images/5663353_2954453.jpg);
+    background-image: url(images/Screenshot\ 2023-11-15\ at\ 12.07.59\ PM-modified.png);
     height: 30vh;
     width: 100%;
     background-size: cover;
@@ -906,13 +910,19 @@ body{
 }
 
 .map-button{
-    padding: .6rem .8rem;
+    font-size: .95rem;
+    padding: .5em .7em;
     background: #E60022;
     font-family: inherit;
     font-weight: 600;
     color: white;
     border: none;
     margin-top: .5rem;
+    cursor: pointer;
+}
+
+.map-button:hover{
+    opacity: .85;
 }
 
 /* 
@@ -971,6 +981,19 @@ body{
 */
 @media (min-width: 768px){
 
+
+    .map-container i{
+        font-size: 4rem;
+    }
+    
+    .map-button{
+        font-size: 1.2rem;
+    }
+    
+
+    .map-container{
+        height: 40vh;
+    }
 
     .join-container h1{
         font-size: 2rem; 
@@ -1256,6 +1279,18 @@ body{
 /////////////////////     1024 PX  /////////////////////////////////////////
 */
 @media (min-width: 1024px){
+
+    .map-container i{
+        font-size: 4.5rem;
+    }
+    
+    .map-button{
+        font-size: 1.5rem;
+    }
+    
+    .map-container{
+        height: 55vh;
+    }
 
     .join-call-to-action input[type='text']{
         padding: .7rem .2rem;

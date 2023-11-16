@@ -10,6 +10,7 @@ const sectionTwoText = document.querySelector('.burger-ingredients-text-containe
 
 const menuImages = document.querySelectorAll('.burger-image');
 
+const mapContainer = document.querySelector('.map-container');
 
 
 const caursel = document.querySelector('.caursel');
@@ -17,14 +18,12 @@ const arrows = document.querySelectorAll('.wrapper i');
 const firstCardWidth = document.querySelector('.menu-img').offsetWidth;
 
 
-
+//Resimler yuklenene kadar resimlerin yerine place holder tutmama izin veriyor
 arrows.forEach((arrow) => {
-    
     arrow.addEventListener('click',() => {
         caursel.scrollLeft += arrow.id === 'arrow-left' ? -firstCardWidth : firstCardWidth;
     });
 });
-
 
 function loadImage(e){
     e.target.parentElement.classList.add('loaded');
@@ -38,6 +37,7 @@ menuImages.forEach((img) => {
     }
 });
 
+//Headerin respnisve ve islevsellegini artirmama izin veriyor
 navOpenButton.onclick = () =>{
     navMenu.classList.toggle('open');   
     navMenuList.classList.toggle('open');
@@ -47,10 +47,11 @@ navOpenButton.onclick = () =>{
 mediaQuery.addEventListener('change',() => {
     if (mediaQuery.matches) {
          navMenu.classList.remove('trans');
+         mapContainer.style.backgroundImage = "url('images/Screenshot 2023-11-15 at 12.08.11 PM-modified.png')"
     }
 });
 
-
+//Ikinci sectionda gecis animasyonlari  yapmama izin veriyor
 const optionsSectionTwo = {
     root : null,
     thresold : 0,
@@ -72,10 +73,12 @@ const sectionTwoObserver  = new IntersectionObserver(function(entries,observer){
     })
 },optionsSectionTwo)
 
-
 sectionTwoObserver.observe(sectionTwo)
 
 
+if (mediaQuery.matches) {
+    mapContainer.style.backgroundImage = "url('images/Screenshot 2023-11-15 at 12.08.11 PM-modified.png')"
+}
 
 
 
