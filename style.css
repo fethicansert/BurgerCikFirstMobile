@@ -838,7 +838,6 @@ body{
     font-size: 2.2rem;
     text-transform: uppercase;
     margin-bottom: .3rem;
-    
 }
 
 .join-text p{
@@ -849,7 +848,7 @@ body{
 .join-call-to-action input[type='text']{
     display: block;
     margin: 0 auto .9rem auto;
-    padding: .6rem .2rem;
+    padding: .6rem .5rem;
     border: none;   
 }
 
@@ -885,7 +884,7 @@ body{
 
 
 .map-section{
-    margin-top: 2rem;
+    
 }
 
 .map-container{
@@ -923,6 +922,66 @@ body{
 
 .map-button:hover{
     opacity: .85;
+}
+
+footer{
+    background: #252525;
+}
+
+.footer-top-container{
+    width: 100%;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.footer-box{
+    padding: 1rem .5rem;
+    text-align: center;
+}
+
+.footer-box:nth-child(1){
+    padding: 1rem 0;
+}
+
+.footer-box h2{
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size:2rem;
+    line-height: 40px;
+    max-width: min-content;
+    margin:  0 auto;
+}
+
+.footer-box p{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: .9rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.footer-box-icon-text{
+    display: flex;
+    justify-content: center;
+    margin-top: .4rem;
+}
+
+.footer-box i{
+    color: #f7b21d;
+    margin-right: .5rem;
+}
+
+.footer-box span{
+    color: #f7b21d;
+    font-weight: 500;
+}
+
+.footer-box li{
+    margin-top: .3rem;
+}
+
+.footer-bottom-container{
+    background: #181818;
+    height: 10vh;
 }
 
 /* 
@@ -996,7 +1055,7 @@ body{
     }
 
     .join-container h1{
-        font-size: 2rem; 
+        font-size: 2.2rem; 
     }
 
     .join-call-to-action input[type='text']{
@@ -1025,7 +1084,7 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 3rem .5rem;
+        padding: 3.5rem .5rem;
     }
 
     .join-text {
@@ -1289,11 +1348,11 @@ body{
     }
     
     .map-container{
-        height: 55vh;
+        height: 60vh;
     }
 
     .join-call-to-action input[type='text']{
-        padding: .7rem .2rem;
+        padding: .7rem .5rem;
     }
 
     .join-call-to-action button{
@@ -1302,11 +1361,11 @@ body{
     
 
     .join-container{
-        padding: 4rem .5rem;
+        padding: 5rem .5rem;
     }
 
     .join-container h1{
-        font-size: 2.3rem;
+        font-size: 2.5rem;
     }
 
     .join-container p {
